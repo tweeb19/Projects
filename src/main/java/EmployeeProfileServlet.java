@@ -20,6 +20,7 @@ public class EmployeeProfileServlet extends HttpServlet {
 
         request.getRequestDispatcher("navibar.html").include(request, response);
 
+
         String admin = request.getParameter("name");
         out.println("Welcome to your profile page " + admin);
         out.println("\nPlease click on the activity you want to do next:");
@@ -33,7 +34,7 @@ public class EmployeeProfileServlet extends HttpServlet {
 
         try {
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-            Connection con = DriverManager.getConnection("jdbc:odbc:mydsn", "root", "rooty");
+            Connection con = DriverManager.getConnection("jdbc:odbc:employee", "root", "rooty");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("select * from staff");
 
@@ -65,6 +66,8 @@ public class EmployeeProfileServlet extends HttpServlet {
         out.println("<button class='bttn-group' onclick='getData()'>View Reimbursements</button>");
 
         //side menu
+        request.getRequestDispatcher("profile.html").include(request, response);
+        request.getRequestDispatcher("user-list.jsp").forward(request, response);
         request.getRequestDispatcher("profile.html").include(request, response);
         //upload a receipt for expense
         out.println("<form action='' method='get'>");

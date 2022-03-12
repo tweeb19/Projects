@@ -42,9 +42,9 @@ public class AppServlet extends HttpServlet {
          out.println("<table border=1 width=50% height=50%>");
          out.println("<tr><th>Employee Id</th><th>Employee Name</th><th>Employee Title</th><th>Salary</th><tr>");
          while (resultSet.next()){
-             String n = resultSet.getString("empid");
-             String nm = resultSet.getString("empname");
-             int salary = resultSet.getInt("sal");
+             String n = resultSet.getString("emp_id");
+             String nm = resultSet.getString("name");
+             int salary = resultSet.getInt("salary");
              out.println("<tr><td>" + n + "</td><td>" + nm + "</td><td>" + salary + "</td></tr>");
          }
          out.println("</table>");

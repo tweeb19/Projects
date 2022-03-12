@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
 
 
         // append the username in the query string
-        out.println("<h1><a href='AppServlet?a=" + username + "'>Click Here to access employees</a></h1>");
+        out.println("<h1><a href='ManagerServlet?a=" + username + "'>Click Here to access employees</a></h1>");
         out.close();
     }
 }
