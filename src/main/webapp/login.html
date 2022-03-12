@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+
+input[type=text] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 1px solid rgb(247, 63, 222);
+  border-radius: 10px;
+}
+input[type=password] {
+  padding: 10px;
+  margin: 10px 0;
+  border: 0;
+  border-radius: 10px;
+  border-bottom: 1px solid rgb(247, 63, 222);
+}
+input[type=text]:focus {
+  background-color: lightblue;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #3ea7ec;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.bttn-group button {
+        background-color: #3F51B5;
+        border: 1px solid blue;
+        color: white;
+        padding: 10px 24px;
+        cursor: pointer;
+        float: left;
+        }
+        .bttn-group button:not(:last-child) {
+        border-right: none;
+        }
+        .bttn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+        }
+        .bttn-group button:hover {
+        background-color: #380597;
+        }
+    </style>
+</head>
+<body>
+<form action="LoginServlet" method="post">
+
+
+    <p>
+        <label for="uname">UserName:</label>
+        <input type="text" name="username" id="uname">
+    </p>
+    <p>
+        <label for="passw">Password:</label>
+         <input type="password" name="password" id="passw">
+
+    </p>
+    <P>
+        <input type="radio" name="Admin" value="Admin">Admin
+        <input type="radio" name="Employee" value="Employee">Employee
+    </P>
+    <input type="submit" id="button" value="Login">
+
+
+</form>
+</body>
+</html>

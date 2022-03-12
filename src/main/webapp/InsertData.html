@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:c="">
+<head>
+    <meta charset="UTF-8">
+    <title>Data</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .nav-open .nav {
+            transform: translateX(0);
+        }
+        .nav-open .main {
+            transform: translate(350px);
+        }
+        .nav {
+            width: 350px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgb(154, 211, 245);
+            transform: translateX(-350px);
+            transition: transform 0.2s;
+            overflow: hidden;
+        }
+        .nav-close {
+          background: 0;
+          border: none;
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+          padding: 15px 25px;
+          color: blue;
+          cursor: pointer;
+        }
+        .nav-links-container {
+            box-shadow: 0 -10px 10px rgb(27, 168, 250);
+
+
+        }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: black;
+
+        }
+        .nav-txt{
+            font-size: 22px;
+            font-family: Georgia;
+            font-weight: 500;
+        }
+        .nav-link:hover, .nav-close {
+            background: rgba(98, 117, 221, 0.5);
+        }
+        .bttn-group button {
+        background-color: #3F51B5;
+        border: 1px solid blue;
+        color: white;
+        padding: 10px 24px;
+        cursor: pointer;
+        float: left;
+        }
+        .bttn-group button:not(:last-child) {
+        border-right: none;
+        }
+        .bttn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+        }
+        .bttn-group button:hover {
+        background-color: #380597;
+        }
+        .visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip rect(1px, 1px, 1px, 1px);
+        }
+        input.visually-hidden:focus + label {
+        outline: thin dotted;
+        }
+        input.visually-hidden:focus-within + label {
+        outline: thin dotted;
+        }
+.main {
+    transition: transform 0.2s;
+}
+
+    </style>
+</head>
+<body>
+<form action="AppServlet" method="post">
+    <table class="table border">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <forEach var="employee" items="${listEmployee}">
+
+            <tr>
+                <td> value="${employee.id}"</td>
+                <td> value="${employee.name}"</td>
+                <td>value="${employee.title}"</td>
+                <td>value="${employee.salary}"</td>
+                <td><a href="edit?id= value='${employee.id}' />">Edit</a> &nbsp;&nbsp;&nbsp;<a href="delete? value='${employee.id}'">Delete</a></td>
+            </tr>
+        </forEach>
+
+        </tbody>
+    </table>
+    </div>
+
+  <p>ID:</p>
+  <input type="text" name="id"/>
+  <br/>
+  <p>String:</p>
+  <input type="text" name="string"/>
+  <br/><br/><br/>
+  <input type="submit"/>
+</form>
+</body>
+</html>

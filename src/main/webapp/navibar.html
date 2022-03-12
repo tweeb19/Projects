@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+body{
+margin: 0;
+}
+ #mainMenu li:first-child {
+	display:block;
+		width:120px;
+	float:left;
+	margin-left:2px;
+	border:1px solid #000;
+}
+
+#mainMenu a {
+	display:block;
+	float: left;
+	text-align: center;
+	padding:14px 16px;
+	text-decoration:none;
+	background-color:#fff;
+	color:#009;
+}
+
+#mainMenu a:hover {
+	background-color:#009;
+	color:#fff;
+}
+#mainMenu a.active {
+background-color: #04AA6D;
+  color: white;
+}
+    </style>
+</head>
+<body>
+<div id="mainMenu">
+    <a href="login.html">Login</a>
+    <a href="EmployeeProfileServlet">Profile</a>
+    <a href="LogoutServlet">Logout</a>
+    <a href="AppServlet">Support</a>
+</div>
+</body>
+</html>
+

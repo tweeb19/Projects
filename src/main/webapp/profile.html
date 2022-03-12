@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProfilePage</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .nav-open .nav {
+            transform: translateX(0);
+        }
+        .nav-open .main {
+            transform: translate(350px);
+        }
+        .nav {
+            width: 350px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgb(154, 211, 245);
+            transform: translateX(-350px);
+            transition: transform 0.2s;
+            overflow: hidden;
+        }
+        .nav-close {
+          background: 0;
+          border: none;
+          display: flex;
+          align-items: center;
+          margin-left: auto;
+          padding: 15px 25px;
+          color: blue;
+          cursor: pointer;
+        }
+        .nav-links-container {
+            box-shadow: 0 -10px 10px rgb(27, 168, 250);
+
+
+        }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: black;
+
+        }
+        .nav-txt{
+            font-size: 22px;
+            font-family: Georgia;
+            font-weight: 500;
+        }
+        .nav-link:hover, .nav-close {
+            background: rgba(98, 117, 221, 0.5);
+        }
+        .bttn-group button {
+        background-color: #3F51B5;
+        border: 1px solid blue;
+        color: white;
+        padding: 10px 24px;
+        cursor: pointer;
+        float: left;
+        }
+        .bttn-group button:not(:last-child) {
+        border-right: none;
+        }
+        .bttn-group:after {
+        content: "";
+        clear: both;
+        display: table;
+        }
+        .bttn-group button:hover {
+        background-color: #380597;
+        }
+        .visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip rect(1px, 1px, 1px, 1px);
+        }
+        input.visually-hidden:focus + label {
+        outline: thin dotted;
+        }
+        input.visually-hidden:focus-within + label {
+        outline: thin dotted;
+        }
+.main {
+    transition: transform 0.2s;
+}
+
+    </style>
+</head>
+<body>
+<nav class="nav">
+    <button type="button" class="nav-close">
+        <ion-icon name="close-outline" size="large"></ion-icon>
+    </button>
+    <div class="nav-links-container">
+        <a href="" class="nav-link">
+            <span class="nav-txt">Reimbursements</span>
+            <ion-icon name="cash-outline" size="large"></ion-icon>
+        </a>
+        <a href="" class="nav-link">
+            <span class="nav-txt">Contact Info</span>
+            <ion-icon name="home-outline" size="large"></ion-icon>
+        </a>
+        <a href="" class="nav-link">
+            <span class="nav-txt">Vacation</span>
+            <ion-icon name="airplane-outline" size="large"></ion-icon>
+        </a>
+        <a href="" class="nav-link">
+            <span class="nav-txt">Profile Settings</span>
+            <ion-icon name="person-outline" size="large"></ion-icon>
+        </a>
+    </div>
+
+</nav>
+<main class="main">
+    <button type="button" onclick="toggleNav()">Menu Options</button>
+    <p>ACTIVITIES</p>
+    <div class="bttn-group" style="width:100%">
+        <button style="width:25%" onclick='getData()'>View/Update Contact Info</button>
+        <button style="width:25%" onclick='getData()'>Add/Update/Delete Claim</button>
+        <button style="width:25%" onclick='getData()'>View Reimbursements</button>
+    </div><br><br>
+</main>
+<script>
+    function toggleNav(){
+        document.body.classList.toggle("nav-open");
+
+
+        document.querySelector(".nav-close").addEventListener("click", () =>{
+            toggleNav();
+             });
+    }
+</script>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
