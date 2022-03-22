@@ -1,0 +1,2 @@
+# Projects
+This project is a movie critics application using Restful Api, Angular CLI, & Springboot.  This web application creates a user experience to watch and review their films.  Each review gives the member a rank/badge, a potential way to earn a directors' seat badge.   This encourages the user to access the site frequently to watch more movies and provide validation that they know what films are good or not. 
