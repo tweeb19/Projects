@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -17,10 +19,12 @@ import javax.persistence.Id;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
-    private String uname;
-    private String pword;
+    private String firstName;
+    private String lastName;
+    private String username;
+    private String password;
     private String email;
     private int age;
 }
